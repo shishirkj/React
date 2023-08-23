@@ -1,0 +1,102 @@
+1)The error '...' expected js(1005) 
+-> https://www.youtube.com/watch?v=x9etPMC4FLc
+
+
+
+2)Functions are not valid as a React child error
+->https://bobbyhadz.com/blog/react-functions-are-not-valid-as-react-child
+
+
+Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+
+//Example
+//displaying all details of api using mapping  this.state.articles to check is map dosent go out of bound or undefined
+         // (cannot read properties)
+  -> this.state.articles && this.state.articles.map((index) =>
+
+
+3)cannot read properties of undefined
+-> https://www.youtube.com/watch?v=UZT1V-VJxZE&t=124s
+
+
+
+4)Objects are not valid as a React child error
+
+->https://www.youtube.com/watch?v=B3p_U2k2_qk
+
+
+5)Expression expected /declaration or expression expected
+
+-> just write above return 
+
+
+6) uncontrolled to controlled in form 
+-> it happens cauz its undefined in object or array in state
+  4:09:24 
+https://www.youtube.com/watch?v=6l8RWV8D-Yo
+
+
+7)Expected an assignment or function call and instead saw an expression 
+-> u didnt use the return keyword in map or filter
+
+
+
+8)Too many re-renders. React limits the number of renders to prevent an infinite loop.
+ 
+-> Two solutions
+
+a)first when in button on click if it shows the error it happens use arrow function just like when we pass parameters and then write function name
+EXAMPLE--> onclick ={()=>function_name(variable to pass)}
+
+b)write inside a function not outside
+
+link to refer=> https://www.youtube.com/watch?v=S7FeAKnPRFg
+
+
+9)whenever we do lifting state dont pass the change state directly as we change state the re-rendering i.e return function runs again causes delay since useState is async
+
+
+//Issue => i was getting an issue that when i passed 
+
+//MISTAKE
+setData([...data,input]) and directly after change i called resume(data) 
+
+which cauzed async error
+
+//  Solution=>   It seems like the issue you're facing is related to the asynchronous nature of the setState function in React. When you call resume(data) immediately after setData([...data, input]), 
+//React might not have updated the state of data by the time you call the resume function. This is why it works on the second click, as React has had time to update the state.
+// To fix this issue, you can modify the submit function in your Editor component to call the resume function with the updated data state directly. Here's how you can do it:
+
+    const newData = [...data, input];
+        setData(newData);
+        
+       resume(newData);
+
+
+
+
+
+[] object mein left side me isliye kuyki string hona chaiye na ki variableS
+
+
+
+splice(which position,which element to remove,what to add)
+
+findIndex gives index uske andar jus use find method
+
+
+
+10)we see two times in console cauz React is trying to keep the comppnent/function pure
+
+
+//solution-->to remove these two things 
+
+useEffect(()=>{
+//setInterval which like setTimeout
+ 
+const idx= setInterval(()=>{ 
+		console.log('video playing',id)
+		},3000)
+				    })
+
+//to fix the issue and update the backend to equal to DOM
