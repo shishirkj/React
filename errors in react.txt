@@ -100,3 +100,28 @@ const idx= setInterval(()=>{
 				    })
 
 //to fix the issue and update the backend to equal to DOM
+
+
+
+
+11)To fix issues while fetching data like race conditions bug
+use ignore boolean and cleanup
+
+
+Example on how to use ignore
+
+async function startFetching() {
+    const json = await fetchTodos(userId);
+    if (!ignore) {
+      setTodos(json);
+    }
+  }
+
+  startFetching();
+
+  return () => {
+    ignore = true;
+  };
+}, [userId]);
+
+link refer-->https://react.dev/learn/synchronizing-with-effects
